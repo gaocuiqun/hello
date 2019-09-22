@@ -43,6 +43,13 @@ java -Doutput.dir=$(pwd) -Dsymbol.naming=unix_c -jar target/hello.jar generate-a
 cd $(pwd)/my-sample
 mvn package
 ```
+### 创建数据库及表
+
+数据库建表语句在`$(pwd)/my-sample/my-sample-dao/src/main/resources/`，MySQL建表语句脚本是`$(pwd)/my-sample/my-sample-dao/src/main/resources/sampledb-db-mysql-schema.ddl`
+
+```
+mysql -u root -p < $(pwd)/my-sample/my-sample-dao/src/main/resources/sampledb-db-mysql-schema.ddl
+```
 
 ### 运行使用代码生成器生的成样例项目
 
