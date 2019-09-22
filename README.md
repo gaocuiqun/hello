@@ -22,6 +22,35 @@
 git clone https://github.com/gaocuiqun/hello.git
 ```
 
+### 构建代码生成成器
+
+```
+cd hello
+mvn package
+```
+
+### 使用代码生成器生成样例项目
+
+假设要将生成的项目放到当前目录，在Linux或macOS环境，取得当前路径可以用`$(pwd)`，在Windows上可以用想要的路径替代。
+
+```
+java -Doutput.dir=$(pwd) -Dsymbol.naming=unix_c -jar target/hello.jar generate-all sample-model.xml
+```
+
+### 构建使用代码生成器生的成样例项目
+
+```
+cd $(pwd)/my-sample
+mvn package
+```
+
+### 运行使用代码生成器生的成样例项目
+
+```
+java -jar my-sample-app/target/my-sample-app-1.0-SNAPSHOT.war
+```
+
+
 ## 创建Github仓库
 
 
